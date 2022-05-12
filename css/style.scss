@@ -663,6 +663,17 @@ header~section{
 
   } //end of .container
 } //end of #portfolio
+
+footer{
+  background-color: $point-color;
+  >p{
+    display: block;
+    text-align: center;
+    color: white;
+    height: 100px;
+    line-height: 100px;
+  }
+}
  
 
 aside{

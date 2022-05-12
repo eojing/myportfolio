@@ -128,11 +128,11 @@ $($mnu.eq(2)).on('click',function(evt){
 $(window).on('scroll',function(){
 	let scrollTop = $(this).scrollTop();
 
-	if(scrollTop>=$('#aboutme').offset().top){
+	if(scrollTop>=$aboutme.offset().top){
 		$($mnu).eq(0).parent().addClass('on').siblings().removeClass('on')
 	}
 
-	if(scrollTop>=$('#skill').offset().top - 1){
+	if(scrollTop>=$skill.offset().top - 1){
 		$($mnu).eq(1).parent().addClass('on').siblings().removeClass('on')
 	}
 
@@ -141,6 +141,8 @@ $(window).on('scroll',function(){
 	}
 	
 });
+
+
 
 
 
