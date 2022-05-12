@@ -90,6 +90,16 @@ $(function() {
 		}else{$aside.css({marginBottom : 0})}
 	});
 
+	$aside.on('click',function(evt){
+
+		evt.preventDefault();
+
+		$('html,body').animate({
+			scrollTop : 0
+		})
+
+	});
+
 
 $($mnu.eq(0)).on('click',function(evt){
 	evt.preventDefault();
@@ -136,7 +146,7 @@ $(window).on('scroll',function(){
 		$($mnu).eq(1).parent().addClass('on').siblings().removeClass('on')
 	}
 
-	if(scrollTop>=$('#portfolio').offset().top - 1){
+	if(scrollTop>=$portfolio.offset().top - 1){
 		$($mnu).eq(2).parent().addClass('on').siblings().removeClass('on')
 	}
 	
