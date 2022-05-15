@@ -2,49 +2,26 @@ $(function() {
 	//로딩중
 	const $loading = $('.loading');
 	$loading.children('p').fadeOut();
-	$loading.delay(350).fadeOut(800);
-
-	const $h1 = $('h1');
+	$loading.delay(500).fadeOut(1000);
 	const $home = $('#home');
-	const $h2 = $home.find('h2');
-
 	const $header = $('header');
 	const $nav = $header.find('nav');
 	const $btnGnb = $header.find('.btn-gnb');
-
 	const $mnu = $($nav.find('.gnb > li > a'));
-
 	const $aboutme = $('#aboutme');
 	const $skill = $('#skill');
 	const $portfolio = $('#portfolio');
-
-
-
 	const $aside = $('aside');
 
 
 	$(window).on('load resize', function() {
+		// window resize $home height 조절
 		$home.height($(window).height());
-
-		$h1.css({
-			top: $h2.offset().top - 72,
-			marginLeft: -$h1.width() / 2
-		});
-
 		if ($(window).width() > 640) {
 			//PC모드
-			$h1.css({
-				top: $h2.offset().top - 72,
-				marginLeft: -$h1.width() / 2
-			});
 			$nav.show()
 		} else {
 			//모바일
-			$h1.css({
-				top: $h2.offset().top - 100,
-				marginLeft: -$h1.width() / 2
-			});
-
 			$btnGnb.removeClass('clse');
 			$nav.hide()
 		}
@@ -58,6 +35,7 @@ $(function() {
 	$(window).on('scroll',function(){
 		let scrollTop = $(this).scrollTop();
 
+		// 모바일 nav바 fixed 구문
 		if(scrollTop>$(this).height()){
 			$('header').addClass('fixed')
 			$('#aboutme').css({
@@ -70,14 +48,8 @@ $(function() {
 			})
 		}
 
-
-	});
-
-	$(window).on('scroll',function(){
-		
-		let scrollTop = $(this).scrollTop();
-
-		if(scrollTop>120){
+		// 모바일 aside fade구문
+	if(scrollTop>120){
 			$aside.stop().fadeIn();
 		}else{
 			$aside.stop().fadeOut();
@@ -88,8 +60,11 @@ $(function() {
 		if(view>0){
 			$aside.css({marginBottom : view});
 		}else{$aside.css({marginBottom : 0})}
+		
 	});
 
+
+	//asdide 클릭시 animate scrollTop 구문
 	$aside.on('click',function(evt){
 
 		evt.preventDefault();
@@ -151,11 +126,6 @@ $(window).on('scroll',function(){
 	}
 	
 });
-
-
-
-
-
 
 
 });
